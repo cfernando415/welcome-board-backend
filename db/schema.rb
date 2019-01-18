@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_18_031856) do
+ActiveRecord::Schema.define(version: 2019_01_18_213610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_01_18_031856) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "mod_id"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -55,5 +56,6 @@ ActiveRecord::Schema.define(version: 2019_01_18_031856) do
 
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "posts", "mods"
   add_foreign_key "users", "mods"
 end
