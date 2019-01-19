@@ -6,6 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(id: 1, full_name: "Rob Chen", mod_id: 4, password: "password")
-User.create(id: 2, full_name: "Carlo Fernando", mod_id: 4, password: "password")
-User.create(id: 3, full_name: "Terrance Rose", mod_id: 4, password: "password")
+Mod.destroy_all
+User.destroy_all
+
+Mod.create({ rank: 1 })
+Mod.create({ rank: 2 })
+Mod.create({ rank: 3 })
+Mod.create({ rank: 4 })
+Mod.create({ rank: 5 })
+
+User.create({full_name: "Rob Chen", mod_id: 4, password: "password"})
+User.create({full_name: "Carlo Fernando", mod_id: 4, password: "password"})
+User.create({full_name: "Terrance Rose", mod_id: 4, password: "password"})
+User.create({full_name: "LaTarisha Fountain", mod_id: 4, password: "password"})
+User.create({full_name: "Amir Safoev", mod_id: 4, password: "password"})
+User.create({full_name: "Brian Horowitz", mod_id: 4, password: "password"})
+User.create({full_name: "Raquel Randall", mod_id: 4, password: "password"})
+User.create({full_name: "Naomi Joyce Baisa", mod_id: 4, password: "password"})
+User.create({full_name: "Sanjay Sai", mod_id: 4, password: "password"})
+User.create({full_name: "Ommar Azzat", mod_id: 4, password: "password"})
+
+puts "done"
