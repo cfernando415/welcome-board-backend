@@ -26,4 +26,23 @@ User.create({full_name: "Naomi Joyce Baisa", mod_id: Mod.find_by(rank: 4).id, pa
 User.create({full_name: "Sanjay Sai", mod_id: Mod.find_by(rank: 4).id, password: "password"})
 User.create({full_name: "Ommar Azzat", mod_id: Mod.find_by(rank: 4).id, password: "password"})
 
+Post.create!({content: "test content", mod_id: Mod.find_by(rank: 1).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 2).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 2).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 3).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 3).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 3).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+Post.create({content: "test content", mod_id: Mod.find_by(rank: 4).id})
+
 puts "done"
