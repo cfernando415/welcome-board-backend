@@ -1,4 +1,5 @@
 class Api::V1::ReportsController < ApplicationController
+    skip_before_action :authorized, only: [:index, :create]
     def index
         @reports = Report.all
         render json: @reports
