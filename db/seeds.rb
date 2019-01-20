@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Mod.create!({rank: 1})
+User.create!({full_name: "Terrance Rose", password: "123", mod_id: 4})
