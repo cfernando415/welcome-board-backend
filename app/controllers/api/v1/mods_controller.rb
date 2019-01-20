@@ -1,15 +1,15 @@
 class Api::V1::ModsController < ApplicationController
-    skip_before_action :authorized, only: [:index, :create]
+    skip_before_action :authorized, only: [:index]
     
     def index
         @mods = Mod.all
         render json: @mods
     end
 
-    def create
-        @mod = Mod.create(user_params)
-        render json: @mod, status: :accepted
-    end
+    # def create
+    #     @mod = Mod.create(user_params)
+    #     render json: @mod, status: :accepted
+    # end
 
     def update
         @mod.update(mod_params)
