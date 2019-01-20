@@ -1,5 +1,8 @@
 class User < ApplicationRecord
-  belongs_to :mod, optional: true
+  has_secure_password
+  validates :full_name, uniqueness: { case_sensitive: false }
+
+  belongs_to :mod
   has_many :posts, dependent: :destroy
   has_many :likes
   has_many :posts, through: :likes

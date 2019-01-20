@@ -1,4 +1,6 @@
 class Api::V1::ModsController < ApplicationController
+    skip_before_action :authorized, only: [:index, :create]
+    
     def index
         @mods = Mod.all
         render json: @mods
