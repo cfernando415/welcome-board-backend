@@ -11,6 +11,8 @@ class Api::V1::PostsController < ApplicationController
     end
 
     def update
+        # byebug
+        @post = find_post
         @post.update(post_params)
         if @post.save
             render json: @post, status: :accepted
