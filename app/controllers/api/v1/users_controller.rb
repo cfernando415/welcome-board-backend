@@ -12,10 +12,10 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
+        @user = User.create(full_name: params[:full_name], password: params[:password], mod_id: params[:mod_id])
         if @user.valid?
-          @token = JWT.encode(full_name: @user.full_name)
-          render json: { user: UserSerializer.new(@user), jwt: @token }, status: :created
+          @token = JWT.encode({full_name: @user.full_name}, 'isd3nK')
+          render json: { user: @user, jwt: @token }, status: :created
         else
           render json: { error: 'failed to create user' }, status: :not_acceptable
         end
@@ -40,7 +40,7 @@ class Api::V1::UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permits(:full_name, :password, :mod_id)
+        params.require(:user).permit(:full_name, :password, :mod_id)
     end
 
     def find_user
