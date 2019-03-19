@@ -18,6 +18,8 @@ class Api::V1::UsersController < ApplicationController
           render json: { user: @user, jwt: @token }, status: :created
         else
           render json: { error: 'failed to create user' }, status: :not_acceptable
+        # flash[:error] = @user.errors.full_messages
+        # redirect_to new_user_path(@user)
         end
     end
 
